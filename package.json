@@ -2,7 +2,7 @@
   "name": "xenos-rampant-builder",
   "private": true,
   "version": "0.3.2",
-  "homepage": "https://dickloraine.github.io/xenos-rampant-builder/",
+  "homepage": "https://xenos-rampant-builder.mr-paradox.net/",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
