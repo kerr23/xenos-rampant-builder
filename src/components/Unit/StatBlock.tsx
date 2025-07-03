@@ -1,11 +1,4 @@
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableRow,
-  Typography,
-} from '@mui/material';
+import { Table, TableBody, TableCell, TableContainer, TableRow } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import React from 'react';
@@ -20,20 +13,16 @@ const StatCells: React.FC<{
   overrideValue?: string;
 }> = ({ stat, stats, freeActivations, isPhone, overrideValue }) => {
   const data = statData[stat];
-  const value = overrideValue || (stats[stat] ? stats[stat] + data.suffix : '-');
+  const originalValue =
+    overrideValue || (stats[stat] ? stats[stat] + data.suffix : '-');
+  const displayValue = freeActivations.includes(stat)
+    ? `Free (${originalValue})`
+    : originalValue;
 
   return (
     <>
       <TableCell>{isPhone ? data.shortName : data.name}</TableCell>
-      {freeActivations.includes(stat) ? (
-        <TableCell>
-          <Typography color="secondary" variant="inherit">
-            <strong>{value}</strong>
-          </Typography>
-        </TableCell>
-      ) : (
-        <TableCell>{value}</TableCell>
-      )}
+      <TableCell>{displayValue}</TableCell>
     </>
   );
 };
