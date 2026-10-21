@@ -92,7 +92,7 @@ const ExportCustomData: React.FC<{ open: boolean; handleClose: () => void }> = (
       copyToClipboard(exportString);
       dispatch(showFeedback('Custom data copied to clipboard!', 'success'));
       handleClose();
-    } catch (err) {
+    } catch {
       dispatch(showFeedback('Could not export the custom data!', 'error'));
     }
   };

@@ -20,7 +20,7 @@ export type CheckboxButtonGroupProps = {
   label?: string;
   labelKey?: string;
   valueKey?: string;
-  // eslint-disable-next-line @typescript-eslint/ban-types
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
   onChange?: Function;
   returnObject?: boolean;
   disabled?: boolean;

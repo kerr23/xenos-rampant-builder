@@ -78,7 +78,7 @@ const ExportList: React.FC<{ onClose?: () => void; showText?: boolean }> = ({
       const list = exportFunc();
       copyToClipboard(list);
       dispatch(showFeedback('List copied to clipboard!', 'success'));
-    } catch (err) {
+    } catch {
       dispatch(showFeedback('Could not export the list!', 'error'));
     }
   };
